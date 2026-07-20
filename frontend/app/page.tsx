@@ -6,7 +6,7 @@ export default function Home() {
   const [status, setStatus] = useState('Loading...');
 
   useEffect(() => {
-    fetch('http://localhost:8000/')
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/`)
       .then((res) => res.json())
       .then((data) => setStatus(data.status))
       .catch(() => setStatus('Failed to reach backend'));
